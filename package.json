@@ -1,0 +1,22 @@
+{
+  "name": "ohhello",
+  "version": "1.0.0",
+  "description": "Reply HTTP 200 to all incoming requests and print some info about the request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superjohan/ohhello.git"
+  },
+  "author": "Johan Halin",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/superjohan/ohhello/issues"
+  },
+  "homepage": "https://github.com/superjohan/ohhello#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
