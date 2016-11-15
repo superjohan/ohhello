@@ -7,14 +7,14 @@ configurePaths();
 
 // from http://stackoverflow.com/a/12345876/5002858
 function rawBody(req, res, next) {
-  req.setEncoding('utf8');
-  req.rawBody = '';
-  req.on('data', function(chunk) {
-    req.rawBody += chunk;
-  });
-  req.on('end', function(){
-    next();
-  });
+    req.setEncoding('utf8');
+    req.rawBody = '';
+    req.on('data', function(chunk) {
+        req.rawBody += chunk;
+    });
+    req.on('end', function() {
+        next();
+    });
 }
 
 function configurePaths() {
@@ -52,6 +52,6 @@ function printRequestInfoAndSend200(req, res) {
 
 var port = 3000;
 
-app.listen(port, function () {
+app.listen(port, function() {
     console.log('listening on port ' + port);
 });
