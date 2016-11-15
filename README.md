@@ -10,5 +10,5 @@
 
 ```
 rm@werq ~/ohhello> node index.js 3000 401
-Listening on port 3000, sending HTTP 401 to all requests.
+Oh, hello! Listening on port 3000, sending HTTP 401 to all requests.
 ```
