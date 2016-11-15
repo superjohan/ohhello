@@ -31,23 +31,23 @@ function rawBody(req, res, next) {
 function configurePaths() {
     ['/', '/*'].forEach(function(path) {
         app.get(path, function(req, res) {
-            printRequestInfoAndSend200(req, res);
+            printRequestInfoAndSendStatusCode(req, res);
         })
 
         app.post(path, function(req, res) {
-            printRequestInfoAndSend200(req, res);
+            printRequestInfoAndSendStatusCode(req, res);
         })
 
         app.put(path, function(req, res) {
-            printRequestInfoAndSend200(req, res);
+            printRequestInfoAndSendStatusCode(req, res);
         })
 
         app.patch(path, function(req, res) {
-            printRequestInfoAndSend200(req, res);
+            printRequestInfoAndSendStatusCode(req, res);
         })
 
         app.delete(path, function(req, res) {
-            printRequestInfoAndSend200(req, res);
+            printRequestInfoAndSendStatusCode(req, res);
         })
     });
 }
