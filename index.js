@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+app.use(rawBody);
+
+configurePaths();
+
 // from http://stackoverflow.com/a/12345876/5002858
 function rawBody(req, res, next) {
   req.setEncoding('utf8');
@@ -13,47 +17,29 @@ function rawBody(req, res, next) {
   });
 }
 
-app.use(rawBody);
+function configurePaths() {
+    ['/', '/*'].forEach(function(path) {
+        app.get(path, function(req, res) {
+            printRequestInfoAndSend200(req, res);
+        })
 
-app.get('/', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
+        app.post(path, function(req, res) {
+            printRequestInfoAndSend200(req, res);
+        })
 
-app.get('/*', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
+        app.put(path, function(req, res) {
+            printRequestInfoAndSend200(req, res);
+        })
 
-app.post('/', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
+        app.patch(path, function(req, res) {
+            printRequestInfoAndSend200(req, res);
+        })
 
-app.post('/*', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.put('/', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.put('/*', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.patch('/', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.patch('/*', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.delete('/', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
-
-app.delete('/*', function (req, res) {
-    printRequestInfoAndSend200(req, res);
-});
+        app.delete(path, function(req, res) {
+            printRequestInfoAndSend200(req, res);
+        })
+    });
+}
 
 function printRequestInfoAndSend200(req, res) {
     console.log('url: ' + req.originalUrl);
