@@ -1,6 +1,17 @@
 var express = require('express');
 var app = express();
 
+var port = process.argv[2];
+if (!port) {
+    console.log('Usage: node index.js PORT [STATUSCODE]')
+    process.exit(1);
+}
+
+var statusCode = process.argv[3];
+if (!statusCode) {
+    statusCode = 200;
+}
+
 app.use(rawBody);
 
 configurePaths();
@@ -41,17 +52,15 @@ function configurePaths() {
     });
 }
 
-function printRequestInfoAndSend200(req, res) {
+function printRequestInfoAndSendStatusCode(req, res) {
     console.log('url: ' + req.originalUrl);
     console.log('body: ' + req.rawBody);
     console.log('headers: ' + JSON.stringify(req.headers));
     console.log('');
 
-    res.sendStatus(200);
+    res.sendStatus(statusCode);
 }
 
-var port = 3000;
-
 app.listen(port, function() {
-    console.log('listening on port ' + port);
+    console.log('Oh, hello! Listening on port ' + port + ', sending HTTP ' + statusCode + ' to all requests.');
 });
