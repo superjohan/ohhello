@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+app.use(rawBody);
+
+configurePaths();
 
 var port = process.argv[2];
 if (!port) {
@@ -12,9 +15,9 @@ if (!statusCode) {
     statusCode = 200;
 }
 
-app.use(rawBody);
-
-configurePaths();
+app.listen(port, function() {
+    console.log('Oh, hello! Listening on port ' + port + ', sending HTTP ' + statusCode + ' to all requests.');
+});
 
 // from http://stackoverflow.com/a/12345876/5002858
 function rawBody(req, res, next) {
@@ -60,7 +63,3 @@ function printRequestInfoAndSendStatusCode(req, res) {
 
     res.sendStatus(statusCode);
 }
-
-app.listen(port, function() {
-    console.log('Oh, hello! Listening on port ' + port + ', sending HTTP ' + statusCode + ' to all requests.');
-});
