@@ -1,6 +1,6 @@
 {
     "name": "ohhello",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Reply HTTP 200 to all incoming requests and print some info about the request.",
     "main": "index.js",
     "scripts": {
