@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var express = require('express');
 var app = express();
 app.use(rawBody);
@@ -6,7 +8,7 @@ configurePaths();
 
 var port = process.argv[2];
 if (!port) {
-    console.log('Usage: node index.js PORT [STATUSCODE]')
+    console.log('Usage: ohhello PORT [STATUSCODE]')
     process.exit(1);
 }
 
