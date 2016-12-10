@@ -18,5 +18,8 @@
     "homepage": "https://github.com/superjohan/ohhello#readme",
     "dependencies": {
         "express": "^4.14.0"
+    },
+    "bin": {
+        "ohhello": "./index.js"
     }
 }
