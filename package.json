@@ -1,7 +1,7 @@
 {
     "name": "ohhello",
     "version": "2.0.0",
-    "description": "Reply HTTP 200 to all incoming requests and print some info about the request.",
+    "description": "Always respond with a specific HTTP status code to all incoming requests and print some info about the request.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
