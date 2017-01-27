@@ -2,9 +2,11 @@
 
 `ohhello` is a simple app that responds with `HTTP 200` (default) to any incoming request, and prints some info about it. It fits my needs and probably no one else's, but here it is anyway.
 
-### Oh my gosh the app is on npm too
+## Install via npm
 
 Just go `npm install -g ohhello` if you want to install the app!
+
+## Install from source
 
 ### If you want to install the app globally
 
